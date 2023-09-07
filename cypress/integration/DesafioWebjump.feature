@@ -29,3 +29,11 @@ Feature: Desafio Webjump
         And adiciono ao carrinho
         And recebo a mensagem de confirmacao da adicao
         Then vejo o produto no meu carrinho
+
+    Scenario: Finalização de compra
+        Given desejo finalizar minha compra
+        When clico no carrinho
+        And clico em 'Proceed to Checkout'
+        And clico no botao 'Next'
+        And clico no botao 'Place Order'
+        Then vejo meu numero de pedido

@@ -60,7 +60,7 @@ When(/^acesso a tela de Login$/, () => {
 });
 
 When(/^preencho o campo 'Email'$/, () => {
-	DesafioWebjumpPages.insereEmailLogin(email);
+	DesafioWebjumpPages.insereEmailLogin(Cypress.env('email'));
 });
 
 When(/^preencho o campo 'Password'$/, () => {
@@ -90,6 +90,7 @@ When(/^seleciono um produto$/, () => {
 });
 
 When(/^adiciono ao carrinho$/, () => {
+	cy.reload();
 	DesafioWebjumpPages.clicarNoBotaoAdicionarAoCarrinho();
 });
 
@@ -100,4 +101,30 @@ When(/^recebo a mensagem de confirmacao da adicao$/, () => {
 Then(/^vejo o produto no meu carrinho$/, () => {
 	DesafioWebjumpPages.clicarNoCarrinho();
 	DesafioWebjumpPages.confirmaItemNoCarrinho();
+});
+
+
+
+Given(/^desejo finalizar minha compra$/, () => {
+	return true;
+});
+
+When(/^clico no carrinho$/, () => {
+	return true;
+});
+
+When(/^clico em 'Proceed to Checkout'$/, () => {
+	DesafioWebjumpPages.clicarNoBotaoFinalizarCompra();
+});
+
+When(/^clico no botao 'Next'$/, () => {
+	DesafioWebjumpPages.clicarNoBotaoContinuarCompra();
+});
+
+When(/^clico no botao 'Place Order'$/, () => {
+	DesafioWebjumpPages.clicarNoBotaoFazerPedido();
+});
+
+Then(/^vejo meu numero de pedido$/, () => {
+	DesafioWebjumpPages.confirmaNumeroDoPedido();
 });

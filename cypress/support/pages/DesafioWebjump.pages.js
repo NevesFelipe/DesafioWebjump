@@ -62,5 +62,14 @@ export const DesafioWebjumpPages = {
     },
     clicarNoBotaoFinalizarCompra(){
         DesafioWebjumpElements.botaoFinalizarCompra().should('be.visible').click();
+    },
+    clicarNoBotaoContinuarCompra(){
+        DesafioWebjumpElements.botaoContinuarcompra().should('be.visible').click();
+    },
+    clicarNoBotaoFazerPedido(){
+        DesafioWebjumpElements.botaoFazerPedido().should('be.visible').click();
+    },
+    confirmaNumeroDoPedido(){
+        DesafioWebjumpElements.confirmaNumeroDoPedido().should('be.visible');
     }
 }

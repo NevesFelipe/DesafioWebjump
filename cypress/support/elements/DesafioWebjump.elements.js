@@ -37,7 +37,11 @@ export const DesafioWebjumpElements = {
 
     confirmaItemNoCarrinho: () => cy.get('#mini-cart > .item > :nth-child(1) > .product-item-details'),
 
-    botaoFinalizarCompra: () => cy.get('[id="top-cart-btn-checkout"]')
+    botaoFinalizarCompra: () => cy.get('[id="top-cart-btn-checkout"]'),
 
+    botaoContinuarcompra: () => cy.get('[class="button action continue primary"]'),
 
+    botaoFazerPedido: () => cy.get('[class="action primary checkout"]'),
+
+    confirmaNumeroDoPedido: () => cy.get('[class="order-number"]')
 }
