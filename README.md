@@ -52,10 +52,10 @@ npx cypress run
 ```
 Os resultados serão apresentados no terminal ao fim da execução e um vídeo será disponibilidado para maiores detalhes.
 ## Resultados
-No ultimo teste, finalização da compra, eu não consegui fazer funcionar porque durante a execução do cypress a sessão logada no site era perdida, então sempre ficava um carrinho vazio. Não consegui contornar a situação para obter um resultado positivo.
+No ultimo teste, finalização da compra, eu não consegui fazer funcionar porque durante a execução do cypress a sessão logada no site era perdida, então sempre ficava um carrinho vazio. Não consegui contornar a situação para obter um resultado positivo.<br>
 ![resultados](evidence/image.png)
 
 ### Observações
 O ideal para identificação dos elementos da página seria utilização de ids de testes, porém muitos elementos não haviam ids que não fossem dinâmicos.<br>
-Além disso, o site muitas vezes apresentou uma tela de espera de em média 4 minutos, causando timeout nos testes e dificultando a navegação.
+Além disso, o site muitas vezes apresentou uma tela de espera de em média 4 minutos, causando timeout nos testes e dificultando a navegação.<br>
 ![tempoEspera](<evidence/imagemEspera.jpg>)
