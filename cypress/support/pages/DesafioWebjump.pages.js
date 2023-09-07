@@ -12,11 +12,11 @@ export const DesafioWebjumpPages = {
     insereUltimoNome(ultimoNome){
         DesafioWebjumpElements.campoUltimoNome().should('be.visible').type(ultimoNome);
     },
-    insereEmail(email){
-        DesafioWebjumpElements.campoEmail().should('be.visible').type(email);
+    insereEmailCadastro(email){
+        DesafioWebjumpElements.campoEmailCadastro().should('be.visible').type(email);
     },
-    insereSenha(senha){
-        DesafioWebjumpElements.campoSenha().should('be.visible').type(senha);
+    insereSenhaCadastro(senha){
+        DesafioWebjumpElements.campoSenhaCadastro().should('be.visible').type(senha);
     },
     confirmaSenha(senha){
         DesafioWebjumpElements.campoConfirmaSenha().should('be.visible').type(senha);
@@ -26,5 +26,41 @@ export const DesafioWebjumpPages = {
     },
     confirmaCadastro(){
         DesafioWebjumpElements.confirmarCadastro().should('be.visible');
+    },
+    insereEmailLogin(email){
+        DesafioWebjumpElements.campoEmailLogin().should('be.visible').type(email);
+    },
+    insereSenhaLogin(senha){
+        DesafioWebjumpElements.campoSenhaLogin().should('be.visible').type(senha);
+    },
+    clicarNoBotaoLogar(){
+        DesafioWebjumpElements.botaoLogar().should('be.visible').click();
+    },
+    confirmaLogin(){
+        DesafioWebjumpElements.confirmaLogin().should('be.visible');
+    },
+    clicarNoMenuGear(){
+        DesafioWebjumpElements.menuGear().should('be.visible').click();
+    },
+    clicarNoMenuBags(){
+        DesafioWebjumpElements.menuBags().should('be.visible').click();
+    },
+    clicarNoProduto(){
+        DesafioWebjumpElements.produto().should('be.visible').click();
+    },
+    clicarNoBotaoAdicionarAoCarrinho(){
+        DesafioWebjumpElements.botaoAdicionarAoCarrinho().should('be.visible').click();
+    },
+    clicarNoCarrinho(){
+        DesafioWebjumpElements.botaoCarrinho().should('be.visible').click();
+    },
+    confirmaAdicaoAoCarrinho(){
+        DesafioWebjumpElements.confirmaAdicaoAoCarrinho().should('be.visible');
+    },
+    confirmaItemNoCarrinho(){
+        DesafioWebjumpElements.confirmaItemNoCarrinho().should('be.visible');
+    },
+    clicarNoBotaoFinalizarCompra(){
+        DesafioWebjumpElements.botaoFinalizarCompra().should('be.visible').click();
     }
 }
