@@ -1,6 +1,12 @@
 {
   "testFiles": "**/*.feature",
   "baseUrl": "https://magento2-demo.magebit.com",
-  "cadastroUrl": "https://magento2-demo.magebit.com/customer/account/create",
+  "env": {
+    "cadastroUrl": "https://magento2-demo.magebit.com/customer/account/create",
+    "loginUrl": "https://magento2-demo.magebit.com/customer/account/login",
+    "primeiroNome": "felipe",
+    "ultimoNome": "dias",
+    "senha": "zNXhPymlb4duHql"
+  },
   "projectId": "zv6t9y"
 }

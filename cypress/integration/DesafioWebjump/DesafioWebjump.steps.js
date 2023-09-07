@@ -1,9 +1,6 @@
 import { DesafioWebjumpPages } from "../../support/pages/DesafioWebjump.pages";
 
-const primeiroNome = 'felipe';
-const ultimoNome = 'dias';
 const email = gerarEmailAleatorio();
-const senha = 'zNXhPymlb4duHql'
 
 function gerarEmailAleatorio() {
     const caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -22,27 +19,27 @@ Given(/^desejo me cadastrar$/, () => {
 });
 
 When(/^acesso a tela de cadastro$/, () => {
-	cy.visit('https://magento2-demo.magebit.com/customer/account/create/');
+	cy.visit(Cypress.env('cadastroUrl'));
 });
 
-When(/^preencho o campo 'First Name'$/, () => {
-	DesafioWebjumpPages.inserePrimeiroNome(primeiroNome);
+When(/^preencho o campo 'First Name' no cadastro$/, () => {
+	DesafioWebjumpPages.inserePrimeiroNome(Cypress.env('primeiroNome'));
 });
 
-When(/^preencho o campo 'Last Name'$/, () => {
-	DesafioWebjumpPages.insereUltimoNome(ultimoNome);
+When(/^preencho o campo 'Last Name' no cadastro$/, () => {
+	DesafioWebjumpPages.insereUltimoNome(Cypress.env('ultimoNome'));
 });
 
-When(/^preencho o campo 'Email'$/, () => {
-	DesafioWebjumpPages.insereEmail(email);
+When(/^preencho o campo 'Email' no cadastro$/, () => {
+	DesafioWebjumpPages.insereEmailCadastro(email);
 });
 
-When(/^preencho o campo 'Password'$/, () => {
-	DesafioWebjumpPages.insereSenha(senha);
+When(/^preencho o campo 'Password' no cadastro$/, () => {
+	DesafioWebjumpPages.insereSenhaCadastro(Cypress.env('senha'));
 });
 
-When(/^preencho o campo 'Confirm Password'$/, () => {
-	DesafioWebjumpPages.confirmaSenha(senha);
+When(/^preencho o campo 'Confirm Password' no cadastro$/, () => {
+	DesafioWebjumpPages.confirmaSenha(Cypress.env('senha'));
 });
 
 When(/^clico no botao 'Create an Account'$/, () => {
@@ -51,4 +48,56 @@ When(/^clico no botao 'Create an Account'$/, () => {
 
 Then(/^visualizo a mensagem de confirmacao$/, () => {
 	DesafioWebjumpPages.confirmaCadastro();
+});
+
+
+Given(/^desejo logar na minha conta$/, () => {
+	return true;
+});
+
+When(/^acesso a tela de Login$/, () => {
+	cy.visit(Cypress.env('loginUrl'));
+});
+
+When(/^preencho o campo 'Email'$/, () => {
+	DesafioWebjumpPages.insereEmailLogin(email);
+});
+
+When(/^preencho o campo 'Password'$/, () => {
+	DesafioWebjumpPages.insereSenhaLogin(Cypress.env('senha'));
+});
+
+When(/^clico no botao 'Sign In'$/, () => {
+	DesafioWebjumpPages.clicarNoBotaoLogar();
+});
+
+Then(/^visualizo a pagina da minha conta$/, () => {
+	DesafioWebjumpPages.confirmaLogin();
+});
+
+
+Given(/^desejo adicionar um produto ao carrinho$/, () => {
+	return true;
+});
+
+When(/^seleciono uma categoria$/, () => {
+	DesafioWebjumpPages.clicarNoMenuGear();
+	DesafioWebjumpPages.clicarNoMenuBags();
+});
+
+When(/^seleciono um produto$/, () => {
+	DesafioWebjumpPages.clicarNoProduto();
+});
+
+When(/^adiciono ao carrinho$/, () => {
+	DesafioWebjumpPages.clicarNoBotaoAdicionarAoCarrinho();
+});
+
+When(/^recebo a mensagem de confirmacao da adicao$/, () => {
+	DesafioWebjumpPages.confirmaAdicaoAoCarrinho();
+});
+
+Then(/^vejo o produto no meu carrinho$/, () => {
+	DesafioWebjumpPages.clicarNoCarrinho();
+	DesafioWebjumpPages.confirmaItemNoCarrinho();
 });

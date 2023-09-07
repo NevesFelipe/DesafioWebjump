@@ -6,11 +6,11 @@ Feature: Desafio Webjump
     Scenario: Cadastro de usuário
         Given desejo me cadastrar
         When acesso a tela de cadastro
-        And preencho o campo 'First Name'
-        And preencho o campo 'Last Name'
-        And preencho o campo 'Email'
-        And preencho o campo 'Password'
-        And preencho o campo 'Confirm Password'
+        And preencho o campo 'First Name' no cadastro
+        And preencho o campo 'Last Name' no cadastro
+        And preencho o campo 'Email' no cadastro
+        And preencho o campo 'Password' no cadastro
+        And preencho o campo 'Confirm Password' no cadastro
         Then clico no botao 'Create an Account'
         And visualizo a mensagem de confirmacao
 
@@ -21,3 +21,11 @@ Feature: Desafio Webjump
         And preencho o campo 'Password'
         Then clico no botao 'Sign In'
         And visualizo a pagina da minha conta
+
+    Scenario: Adicionar produto ao carrinho
+        Given desejo adicionar um produto ao carrinho
+        When seleciono uma categoria
+        And seleciono um produto
+        And adiciono ao carrinho
+        And recebo a mensagem de confirmacao da adicao
+        Then vejo o produto no meu carrinho
